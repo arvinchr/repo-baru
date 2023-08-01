@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Moqups</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            #headerNavigation {
+                flex-direction: column;
+            }
+
+            #navigation {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            #logo {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- NAV SECTION -->
+        <section id="headerNavigation">
+            <img id="logo" alt="logo" href=""/>
+
+            <nav id="navigation">
+                <a id="home"  href="">Home</a>
+                <a id="package" href="">Our Package</a>
+                <a id="call" href="">Call Us</a>
+            </nav>
+        </section>
+
+        <!-- TITLE SECTION -->
+        <section id="headerTitle">
+            <h1>Your Trusted Travel Agent's</h1>
+            <h3 id="subtitle">Your happiness is our happiness</h3>
+        </section>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <main>
+        <section id="callUs">
+            <div id="article">
+                <img class="bannerSlider"
+                    src="https://wallpaperaccess.com/full/3168403.jpg" alt="a"/>
+                <img class="bannerSlider" 
+                    src="https://cutewallpaper.org/25/beautiful-green-landscape-wallpaper/111822404.jpg" alt="b"/>
+                <img class="bannerSlider" 
+                    src="https://e1.pxfuel.com/desktop-wallpaper/26/562/desktop-wallpaper-drifted-to-shore-landscape-nature-in-jpg-shore.jpg" alt="c"/>
+                <button onclick="plusdDivs(-1)">Previous</button>
+                <button onclick="plusdDivs(1)">Next</button>
+            </div>
+
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusdDivs(n) {
+                    showDivs(slideIndex += n)
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var imgList = document.getElementsByClassName("bannerSlider");
+                    if (n > imgList.length) slideIndex = 1;
+                    else if (n < 1) slideIndex = imgList.length;
+                    
+                    for ( i=0; i < imgList.length; i++) {
+                        imgList[i].style.display = "none";
+                    }
+
+                    imgList[slideIndex-1].style.display = "block";
+
+                    console.log(slideIndex);
+                }
+                
+                // AutoSlider without using button
+                setInterval(() => {
+                    plusdDivs(1)
+                }, 1000) 
+                
+            </script>
+
+            <section id="formContactUs">
+                <h2 class="titleSubtitle">Contact Us</h2>
+                <h6 class="titleSubtitle">Sales akan menghubungi anda 1x24 jam setelah data kami terima.</h6>
+                <form>
+                    <label for="name">Your Name :</label><br>
+                    <input style="color: rgb(151, 151, 151);" type="text" id="name" name="name" placeholder="First and last name">
+                    <br>
+                    <label for="email">Email Address :</label><br>
+                    <input style="color: rgb(151, 151, 151);" type="text" id="email" name="email" placeholder="example@email.com">
+                    <br>
+                    <label for="interest">What are you intrested in?</label><br>
+                    <input style="color: rgb(151, 151, 151);" type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                    <br><br>
+                    <input type="button" value="Submit">
+                </form>
+            </section>
+        </section>
+    </main>
+
+
+    <!-- FOOTER SECTION -->
+    <footer>
+
+    </footer>
+</body>
+</html>
